@@ -1,0 +1,23 @@
+PODS:
+  - Bolts/Tasks (1.9.0)
+  - Floaty (4.0.0)
+  - Parse (1.16.0):
+    - Parse/Core (= 1.16.0)
+  - Parse/Core (1.16.0):
+    - Bolts/Tasks (~> 1.9)
+  - Zip (1.1.0)
+
+DEPENDENCIES:
+  - Floaty
+  - Parse
+  - Zip
+
+SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Floaty: 4f88811bbf08521807f42355db6a9c0db85d5d78
+  Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
+  Zip: 8877eede3dda76bcac281225c20e71c25270774c
+
+PODFILE CHECKSUM: f420c3a65d7232e37cdd324832634d9bb006175e
+
+COCOAPODS: 1.4.0
