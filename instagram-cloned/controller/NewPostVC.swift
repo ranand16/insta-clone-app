@@ -53,16 +53,18 @@ class NewPostVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         UIApplication.shared.beginIgnoringInteractionEvents()
         
         if let image = newPostImageView.image {
+            print("img : \(image)")
+        
             let post = PFObject(className: "Post")
             post["message"] = commentTF.text
             post["userid"] = PFUser.current()?.objectId
             if let imageData = UIImagePNGRepresentation(image){
 
                 let imageFile = PFFile(name: "Image.png", data: imageData)
-                print("imageData : ")
-                print(imageData)
                 post["imageFile"] = imageFile
                 post.saveInBackground(block: { (success, err) in
+                    print("Success : \(success)")
+                    print("error : \(err)")
                     if success {
                         self.alertDisplay(title: "Image Posted!", message: "Successfully posted the image")
                         self.commentTF.text = ""

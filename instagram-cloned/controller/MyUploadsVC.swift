@@ -42,7 +42,6 @@ class MyUploadsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     // fill the profile details on the page
                     
                     if (user["profilePic"]) != nil{
-                        
                         (user["profilePic"] as! PFFile).getDataInBackground { (profileImageData, err) in
                             if let profileImageData = profileImageData {
                                 if let profileImageToDisplay = UIImage(data: profileImageData){
@@ -79,7 +78,7 @@ class MyUploadsVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let newProgramVar = myPosts[self.rowNumb]
-        print(self.rowNumb)
+//        print(self.rowNumb)
         let destinationVC = segue.destination as! MyUploadDetailVC
         destinationVC.rowDetails = nil
         destinationVC.toBeReceived = []
