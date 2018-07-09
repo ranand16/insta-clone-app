@@ -34,6 +34,14 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         }
     }
     
+    func alertDisplay(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             profilePic.image = image
@@ -70,6 +78,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
                     if res && err == nil{
                         activityIndicator.stopAnimating()
                         UIApplication.shared.endIgnoringInteractionEvents()
+                        self.alertDisplay(title: "Profile updated", message: "Your profile was updated successfully.")
                     } else {
                         print(err.debugDescription ,"not saved")
                     }
